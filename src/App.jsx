@@ -1,13 +1,14 @@
 import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
-import About from './About'
+// import About from './About'
+import MyCards from './MyCards'
 
 function App() {
 
   return (
     <>
-      <About />
+      <MyCards />
     </>
   )
 }
