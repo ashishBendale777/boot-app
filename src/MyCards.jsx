@@ -1,11 +1,23 @@
-import React from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Card, Col, Container, Row, Modal } from 'react-bootstrap'
 import java from "./assets/ic kang/java.png"
 import c from "./assets/ic kang/c.png"
 import cpp from "./assets//ic kang/cpp.png"
 import "./mcards.css"
 
+
 const MyCards = () => {
+    const [isShow, setisShow] = useState(false)
+    const [selectedLang, setselecteedLang] = useState(null)
+
+
+    const doShow = () => {
+        setisShow(true)
+    }
+    const doHide = () => {
+        setisShow(false)
+    }
+
     const languages = [
         {
             title: "Java",
@@ -65,7 +77,10 @@ const MyCards = () => {
                                             <Card.Text>{lang.description}</Card.Text>
                                         </Card.Body>
                                         <Card.Footer>
-                                            <button>SHOW</button>
+                                            <button onClick={() => {
+                                                doShow()
+                                                setselecteedLang(lang)
+                                            }}>SHOW</button>
                                         </Card.Footer>
                                     </Card>
                                 </Col>
@@ -74,6 +89,18 @@ const MyCards = () => {
                     }
                 </Row>
             </Container>
+            <Modal show={isShow} onHide={doHide}>
+                <Modal.Header closeButton>
+                    <h3>Details</h3>
+                </Modal.Header>
+                <Modal.Body>
+                    <h5>{selectedLang?.title}</h5>
+                    <h5>{selectedLang?.description}</h5>
+                </Modal.Body>
+                <Modal.Footer>
+                    <button>Close</button>
+                </Modal.Footer>
+            </Modal>
         </div>
     )
 }
