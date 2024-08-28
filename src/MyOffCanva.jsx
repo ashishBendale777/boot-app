@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Nav, Navbar, Offcanvas } from "react-bootstrap"
+import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 
 const MyOffcanVas = () => {
@@ -13,25 +14,35 @@ const MyOffcanVas = () => {
     }
     return (
         <div>
-            <Navbar>
-                <Navbar.Brand onClick={()=>doShow()}>Off Canvas</Navbar.Brand>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand onClick={() => doShow()}>Off Canvas</Navbar.Brand>
+                </Container>
             </Navbar>
             <Offcanvas show={showCanvas} onHide={doHide}>
                 <Offcanvas.Header>Heade</Offcanvas.Header>
                 <Offcanvas.Title>Title</Offcanvas.Title>
                 <Offcanvas.Body>
                     <Nav className="flex-column">
-                        <Nav.Link>
-                            Home
+                        <Nav.Link onClick={() => doHide()}>
+                            <Link to="/">
+                                Home
+                            </Link>
                         </Nav.Link>
-                        <Nav.Link>
-                            Add
+                        <Nav.Link onClick={() => doHide()}>
+                            <Link to="/add">
+                                Add
+                            </Link>
                         </Nav.Link>
-                        <Nav.Link>
-                            All
+                        <Nav.Link onClick={() => doHide()}>
+                            <Link to="/all">
+                                All
+                            </Link>
                         </Nav.Link>
-                        <Nav.Link>
-                            Profile
+                        <Nav.Link onClick={() => doHide()}>
+                            <Link to="/profile">
+                                Profile
+                            </Link>
                         </Nav.Link>
                     </Nav>
                 </Offcanvas.Body>
