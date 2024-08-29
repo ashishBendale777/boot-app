@@ -1,5 +1,4 @@
-import React from 'react'
-import { useLoaderData, useLocation, useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 
 
