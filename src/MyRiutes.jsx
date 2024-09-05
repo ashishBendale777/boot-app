@@ -9,6 +9,7 @@ import { Container } from 'react-bootstrap'
 import Details from './componanrs/Details'
 import Registration from './componanrs/Registration'
 import Login from './componanrs/Login'
+import Cart from './componanrs/Cart'
 
 
 const MyRiutes = () => {
@@ -26,9 +27,8 @@ const MyRiutes = () => {
                         <Route path='/details' element={<Details />} />
                         <Route path='/details/:langname' element={<Details />} />
                         <Route path='/registration' element={<Registration />} />
-                        <Route path='/login' element={<Login
-                         />} />
-
+                        <Route path='/login' element={<Login />} />
+                        <Route path='/cart' element={<Cart />} />
                     </Routes>
                 </Container>
             </BrowserRouter>

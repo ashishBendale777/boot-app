@@ -2,8 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
-import addItem from "../reduxwork/CartSlice"
 import { useDispatch } from 'react-redux'
+import { addItem } from '../reduxwork/CartSlice'
 
 
 const All = () => {
@@ -31,7 +31,7 @@ const All = () => {
             return (
               <Col sm={12} md={6} lg={3}>
                 {/* {prod.title} */}
-                <Card>
+                <Card key={prod.id}>
                   <Card.Img src={prod.image} />
                   <Card.Body>
                     <Card.Title>{prod.title}</Card.Title>
@@ -40,7 +40,7 @@ const All = () => {
                   <Card.Footer>
                     <button onClick={() => {
                       dispatcher(addItem(prod))
-                      // alert("Added")
+                      alert("Added")
                     }}>Add To Cart</button>
                   </Card.Footer>
                 </Card>

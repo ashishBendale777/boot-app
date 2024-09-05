@@ -44,6 +44,11 @@ const MyOffcanVas = () => {
                                 Profile
                             </Link>
                         </Nav.Link>
+                        <Nav.Link onClick={() => doHide()}>
+                            <Link to="/cart">
+                                Cart
+                            </Link>
+                        </Nav.Link>
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>
