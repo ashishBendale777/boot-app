@@ -8,11 +8,10 @@ import { calculateTotal, decreQty, increQty, removeItem } from '../reduxwork/Car
 const Cart = () => {
     const { cartItems, cartTotal } = useSelector((state) => state.cart)
     const dispather = useDispatch()
-    
-    return (
 
+    dispather(calculateTotal())
+    return (
         <div>
-            {/* {dispather(calculateTotal())} */}
             <h1>Cart</h1>
             <h3>Total: {cartTotal}</h3>
             <Row>
@@ -46,7 +45,7 @@ const Cart = () => {
                     })
                 }
             </Row>
-        </div>
+        </div >
     )
 }
 

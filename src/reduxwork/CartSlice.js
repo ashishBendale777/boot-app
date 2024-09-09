@@ -27,9 +27,11 @@ const cartSlice = createSlice({
             prod.Qty -= 1
         },
         calculateTotal: (state) => {
+            let totalAmount = 0
             state.cartItems.forEach((prod) => {
-                state.cartTotal += prod.price * prod.Qty
+                totalAmount += prod.price * prod.Qty
             })
+            state.cartTotal = totalAmount
         }
     }
 })
