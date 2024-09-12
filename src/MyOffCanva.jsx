@@ -49,6 +49,12 @@ const MyOffcanVas = () => {
                                 Cart
                             </Link>
                         </Nav.Link>
+
+                        <Nav.Link onClick={() => doHide()}>
+                            <Link to="/login">
+                                Login
+                            </Link>
+                        </Nav.Link>
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>

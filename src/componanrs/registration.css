@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Regi-container {
+    height: 25rem;
+    width: 50%;
+    background-color: rgb(157, 188, 247);
+    padding-left: 12rem;
+    padding-top: 10px;
+    margin-left: 20rem;
+    margin-top: 5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+button {
+    height: 40px;
+    width: 90px;
+    margin-top: 20px;
+}
+
+p {
+    margin-top: 40px;
+}
