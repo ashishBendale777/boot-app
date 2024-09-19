@@ -10,9 +10,13 @@ import Details from './componanrs/Details'
 import Registration from './componanrs/Registration'
 import Login from './componanrs/Login'
 import Cart from './componanrs/Cart'
+import ProtecyedRiyte from './componanrs/ProtecyedRiyte'
+import { useSelector } from 'react-redux'
+
 
 
 const MyRiutes = () => {
+    const { isLogin } = useSelector((state) => state.user)
     return (
         <div>
             <BrowserRouter>
@@ -23,7 +27,11 @@ const MyRiutes = () => {
                         <Route path='/' element={<Home />} />
                         <Route path='/add' element={<Add />} />
                         <Route path='/all' element={<All />} />
-                        <Route path='/profile' element={<Profile />} />
+                        <Route path='/profile' element={
+                            <ProtecyedRiyte isLogin={isLogin}>
+                                <Profile />
+                            </ProtecyedRiyte>
+                        } />
                         <Route path='/details' element={<Details />} />
                         <Route path='/details/:langname' element={<Details />} />
                         <Route path='/registration' element={<Registration />} />
